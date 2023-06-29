@@ -1,11 +1,11 @@
 import React from "react";
 
-const Notes = () => {
+const Notes = ({notes}) => {
   return (
     <>
       <section className="mb-5">
         {/* TextArea  */}
-        <p>Notes to client......</p>
+        <p> {notes} </p>
         {/*End of textArea  */}
       </section>
     </>

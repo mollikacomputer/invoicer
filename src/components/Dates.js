@@ -1,20 +1,20 @@
 import React from "react";
 
-const Dates = () => {
+const Dates = ({invoiceNumber, dueDate,invoiceDate }) => {
   return (
     <>
       <article className="my-5 flex items-end justify-end">
         <ul>
           <li>
             
-            <span className="font-bold">Invoice Number :</span> 13241
+            <span className="font-bold">Invoice Number :</span> {invoiceNumber}
           </li>
           <li>
-            <span className="font-bold">Invoice Date :</span> 12/12/12
+            <span className="font-bold">Invoice Date :</span>{invoiceDate}
           </li>
           <li>
             
-            <span className="font-bold">Due Date :</span> 14/14/14
+            <span className="font-bold">Due Date :</span> {dueDate}
           </li>
         </ul>
       </article>

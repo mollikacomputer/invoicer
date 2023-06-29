@@ -1,40 +1,38 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({name,email,phone,bankName, bankAccount, website}) => {
   return (
     <>
       <footer>
         <ul className="flex flex-wrap items-center justify-center">
           <li>
-            <span className="font-bold ml-1">Your Name :</span> Ranjit Kumar
-            Mandal
+            <span className="font-bold ml-1">Your Name :</span> {name}
           </li>
           <li>
             <span className="font-bold ml-1">Your Email :</span>
-            ranji2t@gmail.com
+            {email}
           </li>
           <li>
             
             <span className="font-bold ml-1">Phone Nuber :</span>
-            +8801300-241001
+            {phone}
           </li>
           <li>
             
-            <span className="font-bold ml-1">Bank Name:</span> AB
+            <span className="font-bold ml-1">Bank Name:</span> {bankName}
           </li>
           <li>
             
-            <span className="font-bold ml-1">Acount Holer :</span> Ranjit
+            <span className="font-bold ml-1">Acount Holer :</span> {name}
           </li>
           <li>
             
-            <span className="font-bold ml-1">Bank About Number :</span> 923 332
-            9104
+            <span className="font-bold ml-1">Bank About Number :</span> {bankAccount}
           </li>
           <li>
             
             <span className="font-bold ml-1">Website :</span>
-            http://ranjitdev.com
+            {website}
           </li>
         </ul>
       </footer>

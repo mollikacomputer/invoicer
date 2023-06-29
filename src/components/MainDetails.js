@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MainDetails = () => {
+const MainDetails = ({name, address}) => {
     return (
         <>
         <section className="flex flex-col items-end justify-end ">
-          <h2 className="text-xl uppercase">Ranjit Kumar Mandal</h2>
-          <p>Your Address</p>
+          <h2 className="text-xl uppercase">{name}</h2>
+          <p>{address}</p>
         </section>
       </>
     );
