@@ -5,9 +5,9 @@ function App() {
   }
   return (
     <>
-    <main className="p-5 m-5 lg:max-w-xl lg:mx-auto bg-white rounded shadow">
+    <main className="p-5 m-5 xl:max-w-4xl xl:mx-auto bg-white rounded shadow">
       {/* header */}
-      <header className="flex flex-col items-center justify-center mb-5">
+      <header className="flex flex-col xl:flex-row xl:justify-between items-center justify-center mb-5">
         <div>
             <h1 className="font-bold uppercase tracking-wide text-4xl mb-3">Invoicer Ranjit</h1>
         </div>
@@ -23,35 +23,35 @@ function App() {
 
       {/* Your Details  */}
       <section className="flex flex-col items-end justify-end " >
-        <h2 className="text-3xl uppercase">Ranjit Kumar Mandal</h2>
+        <h2 className="text-xl uppercase">Ranjit Kumar Mandal</h2>
         <p>Your Address</p>
 
       </section>
       {/* End of Your Deails  */}
 
       {/* Client Details  */}
-      <section>
-      <h1 className="text-3xl uppercase"> Client Name </h1>
+      <section className="m6-5">
+      <h1 className="text-xl uppercase"> Client Name </h1>
       <p>Client's address</p>
       </section>  
       {/*End of  client details  */}
 
       {/* Dates  */}
-      <article>
+      <article className="my-5 flex items-end justify-end">
         <ul>
-          <li>Invoice Number : </li>
-          <li> Invoice Date :</li>
-          <li>Due Date : </li>
+          <li> <span className="font-bold">Invoice Number :</span> 13241 </li>
+          <li><span className="font-bold">Invoice Date :</span> 12/12/12 </li>
+          <li> <span className="font-bold">Due Date :</span> 14/14/14 </li>
         </ul>
       </article>
       {/* End of Dates  */}
 
       {/* Table  */}
-
+      <div className="my-5">This is table</div>
       {/* End of table  */}
 
       {/* Notes  */}
-  <section>
+  <section className="mb-5">
     {/* TextArea  */}
     <p>Notes to client......</p>
     {/*End of textArea  */}
@@ -60,13 +60,14 @@ function App() {
 
       {/* Footer  */}
 <footer>
-  <ul>
-    <li>Your Name</li>
-    <li>Your Email</li>
-    <li> Phone Nuber</li>
-    <li>Bank</li>
-    <li>Acount Holer</li>
-    <li>Bank About Number</li>
+  <ul className="flex flex-wrap items-center justify-center">
+    <li><span className="font-bold ml-1">Your Name :</span> Ranjit Kumar Mandal </li>
+    <li><span className="font-bold ml-1">Your Email :</span> ranji2t@gmail.com</li>
+    <li> <span className="font-bold ml-1">Phone Nuber :</span> +8801300-241001 </li>
+    <li> <span className="font-bold ml-1">Bank Name:</span> AB </li>
+    <li> <span className="font-bold ml-1">Acount Holer :</span> Ranjit </li>
+    <li> <span className="font-bold ml-1">Bank About Number :</span> 923 332 9104 </li>
+    <li> <span className="font-bold ml-1">Website :</span> http://ranjitdev.com</li>
   </ul>
 </footer>
       {/* End of footer  */}
