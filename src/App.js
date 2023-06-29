@@ -5,24 +5,25 @@ function App() {
   }
   return (
     <>
-    <main>
+    <main className="p-5 m-5 lg:max-w-xl lg:mx-auto bg-white rounded shadow">
       {/* header */}
-      <header>
+      <header className="flex flex-col items-center justify-center mb-5">
         <div>
-            <h2>Invoicer</h2>
+            <h1 className="font-bold uppercase tracking-wide text-4xl mb-3">Invoicer Ranjit</h1>
         </div>
         <div>
-          <ul>
-            <li> <button onClick={handlePrint} >Print </button> </li>
-            <li>Download</li>
-            <li> Send </li>
+          <ul className="flex items-center justify-between flex-wrap">
+            <li> <button className="btn btn-print" onClick={handlePrint} >Print </button> </li>
+            <li> <button className="btn btn-download">Download</button> </li>
+            <li> <button className="btn btn-send" > Send</button>  </li>
           </ul>
         </div>
       </header>
       {/* End of Header  */}
+
       {/* Your Details  */}
-      <section>
-        <h2>Ranjit Kumar Mandal</h2>
+      <section className="flex flex-col items-end justify-end " >
+        <h2 className="text-3xl uppercase">Ranjit Kumar Mandal</h2>
         <p>Your Address</p>
 
       </section>
@@ -30,7 +31,7 @@ function App() {
 
       {/* Client Details  */}
       <section>
-      <h1> Client Name </h1>
+      <h1 className="text-3xl uppercase"> Client Name </h1>
       <p>Client's address</p>
       </section>  
       {/*End of  client details  */}
@@ -44,9 +45,31 @@ function App() {
         </ul>
       </article>
       {/* End of Dates  */}
+
       {/* Table  */}
-      
+
       {/* End of table  */}
+
+      {/* Notes  */}
+  <section>
+    {/* TextArea  */}
+    <p>Notes to client......</p>
+    {/*End of textArea  */}
+  </section>
+      {/* End of notes  */}
+
+      {/* Footer  */}
+<footer>
+  <ul>
+    <li>Your Name</li>
+    <li>Your Email</li>
+    <li> Phone Nuber</li>
+    <li>Bank</li>
+    <li>Acount Holer</li>
+    <li>Bank About Number</li>
+  </ul>
+</footer>
+      {/* End of footer  */}
     </main>
     </>
   );
