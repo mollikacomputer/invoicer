@@ -5,7 +5,7 @@ const Notes = ({notes}) => {
     <>
       <section className="mb-5">
         {/* TextArea  */}
-        <p> {notes} </p>
+        <p className="lg:w-1/2 text-justify"> {notes} </p>
         {/*End of textArea  */}
       </section>
     </>

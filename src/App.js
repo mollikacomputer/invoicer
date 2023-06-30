@@ -29,7 +29,7 @@ function App() {
   };
   return (
     <>
-      <main className="p-5 m-5 xl:max-w-4xl xl:mx-auto bg-white rounded shadow">
+      <main className="p-5 m-5 md:max-w-xl md:mx-auto lg:max-w-2xl lg:mx-auto xl:max-w-4xl xl:mx-auto bg-white rounded shadow">
         {showInvoice ? (
           <div>
             <Header handlePrint={handlePrint} />
@@ -183,6 +183,9 @@ function App() {
               />
               <label htmlFor="notes"> Notes </label>
               <textarea
+              className="resize-y rounded-md mb-5 "
+                cols='30'
+                rows='10'
                 type="text"
                 name="notes"
                 id="notes"
