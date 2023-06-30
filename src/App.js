@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import MainDetails from "./components/MainDetails";
 import Notes from "./components/Notes";
 import Table from "./components/Table";
+import TableForm from "./components/TableForm";
 
 function App() {
   const [showInvoice, setShowInvoice] = useState(false);
@@ -27,11 +28,13 @@ function App() {
   const [description, setDescription] = useState("Service Description");
   const [quantity, setQuantity] = useState(100);
   const [price, setPrice] = useState(25000);
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState('');
 
   const handlePrint = () => {
     window.print();
   };
+
+    
   return (
     <>
       <main className="p-5 m-5 md:max-w-xl md:mx-auto lg:max-w-2xl lg:mx-auto xl:max-w-4xl xl:mx-auto bg-white rounded shadow">
@@ -54,7 +57,16 @@ function App() {
 
             <Notes notes={notes} />
 
-            <Table />
+            <Table 
+              description={description}
+              setDescription={setDescription}
+              quantity={quantity}
+              setQuantity = {setQuantity}
+              price={price}
+              setPrice= {setPrice}
+              amount={amount}
+              setAmount = {setAmount}
+              />
 
             <Footer
               name={name}
@@ -227,7 +239,6 @@ function App() {
               />
               </div>
               <div className="flex flex-col">
-                
               <label htmlFor="dueDate"> Due date </label>
               <input
                 type="date"
@@ -240,7 +251,15 @@ function App() {
               />
               </div>
               </article>
+              
+              <TableForm 
+              setDescription={setDescription}
+              setQuantity={setQuantity}
+              setPrice={setPrice}
+              />
+
               <label htmlFor="notes"> Notes </label>
+              
               <textarea
                 className="resize-y rounded-md mb-5 "
                 cols="30"
