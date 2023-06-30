@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const TableForm = ({
-    setDescription,
     description,
-    setQuantity,
+    setDescription,
     quantity,
-    setPrice,
+    setQuantity,
     price,
+    setPrice,
     amount,
     setAmount,
     
     }) => {
+        // const calculateAmount= (amount) =>{
+        //     setAmount(quantity * price)
+        // }
+
+        useEffect(()=>{
+            const calculateAmount = (amount) =>{
+                setAmount(quantity*price);
+            }
+            calculateAmount(amount)
+        },[amount,setAmount, quantity, price])
 
     return (
         <>
@@ -28,7 +38,7 @@ const TableForm = ({
                 />
                 </div>
             </div>
-            <article className="md:flex flex-cols-3 gap-10">
+            <article className="md:grid grid-cols-3 gap-10">
                 <div className="flex flex-col"> 
                 <label htmlFor="address">Quantity</label>
                 <input
@@ -55,7 +65,9 @@ const TableForm = ({
                 </div>
                 <div className="flex flex-col"> 
                 <label htmlFor="address">Amount</label>
-                <p> {}</p>
+                <p> {amount}</p>
+
+
                 </div>
               </article>
             

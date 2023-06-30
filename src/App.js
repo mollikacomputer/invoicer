@@ -28,7 +28,7 @@ function App() {
   const [description, setDescription] = useState("Service Description");
   const [quantity, setQuantity] = useState(100);
   const [price, setPrice] = useState(25000);
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState(0);
 
   const handlePrint = () => {
     window.print();
@@ -253,9 +253,14 @@ function App() {
               </article>
               
               <TableForm 
+              description={description}
               setDescription={setDescription}
+              quantity={quantity}
               setQuantity={setQuantity}
+              price={price}
               setPrice={setPrice}
+              amount={amount}
+              setAmount={setAmount}
               />
 
               <label htmlFor="notes"> Notes </label>

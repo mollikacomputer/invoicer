@@ -2,15 +2,11 @@ import React from "react";
 
 const Table = ({
     description,
-    setDescription,
     quantity,
-    setQuantity,
     price,
-    setPrice,
     amount,
-    setAmount,
     }) => {
-
+    
       
   return (
     <>
@@ -18,10 +14,10 @@ const Table = ({
         <table width="100%">
           <thead className="bg-gray-200">
             <tr>
-              <td>Item description</td>
-              <td>Quantity</td>
-              <td>Price</td>
-              <td>Amount</td>
+              <td className="font-bold">Item description</td>
+              <td className="font-bold">Quantity</td>
+              <td className="font-bold">Price</td>
+              <td className="font-bold">Amount</td>
             </tr>
           </thead>
           <tbody>
@@ -29,7 +25,7 @@ const Table = ({
               <td> {description} </td>
               <td> {quantity} </td>
               <td>{price}</td>
-              <td> {setAmount(quantity * price)} </td>
+              <td> {amount} </td>
             </tr>
           </tbody>
         </table>
