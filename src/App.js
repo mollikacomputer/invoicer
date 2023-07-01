@@ -96,13 +96,14 @@ function App() {
               bankName={bankName}
               bankAccount={bankAccount}
             />
-            <button
+            
+          </div>
+          <button
               onClick={() => setShowInvoice(false)}
               className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
             >
               Edit Information
             </button>
-          </div>
           </>
           
         ) : (

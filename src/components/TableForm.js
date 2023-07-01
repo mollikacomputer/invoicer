@@ -62,6 +62,7 @@ const TableForm = ({
     }
   }
 
+
   // Edit function
   const editRow = (id) => {
     const editingRow = list.find((row) => row.id === id);
