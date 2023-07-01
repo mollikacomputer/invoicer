@@ -6,7 +6,7 @@ const Header = ({handlePrint}) => {
       <header className="flex flex-col xl:flex-row xl:justify-center items-center justify-center mb-5">
         <div>
           <h1 className="font-bold uppercase tracking-wide text-4xl mb-3">
-            Invoicer Ranjit
+            Invoicer
           </h1>
         </div>
         <div>
