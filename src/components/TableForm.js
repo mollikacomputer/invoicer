@@ -13,6 +13,7 @@ const TableForm = ({
     setList,
     
     }) => {
+      // Submit form function
         const handleSubmit = (e) =>{
            
             e.preventDefault();
@@ -33,12 +34,20 @@ const TableForm = ({
             console.log(list)
         }
 
+        // Calculate items amount function
         useEffect(()=>{
             const calculateAmount = (amount) =>{
                 setAmount(quantity*price);
             }
             calculateAmount(amount)
         },[amount,setAmount, quantity, price])
+
+        // Edit function
+
+        // Delete function
+        const deleteRow = (id) =>setList(list.filter((row) => row.id !== id))
+          
+        
 
     return (
         <>
@@ -106,7 +115,7 @@ const TableForm = ({
                </thead>
                
                 {
-                    list.map(({id, description, quantity, price, amount})=>(
+                list.map(({id, description, quantity, price, amount})=>(
                 <React.Fragment key={id}>
                  <tbody>
                  <tr>
@@ -114,6 +123,7 @@ const TableForm = ({
                    <td> {quantity} </td>
                    <td>{price}</td>
                    <td> {amount} </td>
+                   <td> <button onClick= {() => deleteRow(id)} > Delete </button> </td>
                  </tr>
 
                </tbody>

@@ -66,6 +66,8 @@ function App() {
               setPrice= {setPrice}
               amount={amount}
               setAmount = {setAmount}
+              list={list}
+              
               />
 
             <Footer
