@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ClientDetails from "./components/ClientDetails";
 import Dates from "./components/Dates";
 import Footer from "./components/Footer";
@@ -7,29 +7,34 @@ import MainDetails from "./components/MainDetails";
 import Notes from "./components/Notes";
 import Table from "./components/Table";
 import TableForm from "./components/TableForm";
+import ReactToPrint from 'react-to-print';
 
 function App() {
   const [showInvoice, setShowInvoice] = useState(false);
 
-  const [name, setName] = useState("Ranjit Kumar Mandal");
-  const [address, setAddress] = useState("Madaripur Sadar, Madaripur");
-  const [email, setEmail] = useState("mollikacomputer3@gmail.com");
-  const [phone, setPhone] = useState("01300241001");
-  const [bankName, setBankName] = useState("Sonali Bank");
-  const [bankAccount, setBankAccount] = useState("2452951");
-  const [website, setWebsite] = useState("http://ranjitdev.com");
-  const [clientName, setClientName] = useState("Sanjit Kumar Roy");
-  const [clientAddress, setClientAddress] = useState("Dhaka, Mogbazar");
-  const [invoiceNumber, setInvoiceNumber] = useState("500");
-  const [invoiceDate, setInvoiceDate] = useState("05/01/2023");
-  const [dueDate, setDueDate] = useState("04/02/2020");
-  const [notes, setNotes] = useState(" Some Long description");
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [bankName, setBankName] = useState("");
+  const [bankAccount, setBankAccount] = useState("");
+  const [website, setWebsite] = useState("");
+  const [clientName, setClientName] = useState("");
+  const [clientAddress, setClientAddress] = useState("");
+  const [invoiceNumber, setInvoiceNumber] = useState("");
+  const [invoiceDate, setInvoiceDate] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [notes, setNotes] = useState("");
 
-  const [description, setDescription] = useState("Service Description");
-  const [quantity, setQuantity] = useState(100);
-  const [price, setPrice] = useState(25000);
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
   const [amount, setAmount] = useState(0);
   const [list, setList] = useState([]);
+  const [total, setTotal] = useState(0);
+  
+
+  const componentRef = useRef();
   const handlePrint = () => {
     window.print();
   };
@@ -38,8 +43,18 @@ function App() {
   return (
     <>
       <main className="p-5 m-5 md:max-w-xl md:mx-auto lg:max-w-2xl lg:mx-auto xl:max-w-4xl xl:mx-auto bg-white rounded shadow">
+
         {showInvoice ? (
-          <div>
+          <>
+          <ReactToPrint 
+          trigger={()=> 
+          <button
+          className="bg-blue-500 mb-10 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
+          > Download / Print</button>
+          } 
+          content={()=> componentRef.current} 
+          />
+          <div ref={componentRef} className="m-10" >
             <Header handlePrint={handlePrint} />
 
             <MainDetails name={name} address={address} />
@@ -67,6 +82,8 @@ function App() {
               amount={amount}
               setAmount = {setAmount}
               list={list}
+              total={total}
+              setTotal={setTotal}
               
               />
 
@@ -86,6 +103,8 @@ function App() {
               Edit Information
             </button>
           </div>
+          </>
+          
         ) : (
           <>
             {/* name, address, email, phone, bank name, bank account number, website, client name
@@ -106,7 +125,7 @@ function App() {
                 </div>
                 <div className="flex flex-col">
                   
-                <label htmlFor="address">Enter Your Address</label>
+                <label htmlFor="address">Your Address</label>
                 <input
                   type="text"
                   name="address"
@@ -265,6 +284,8 @@ function App() {
               setAmount={setAmount}
               list={list}
               setList={setList}
+              total={total}
+              setTotal={setTotal}
               />
 
               <label htmlFor="notes"> Notes </label>

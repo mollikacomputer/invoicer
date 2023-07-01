@@ -6,6 +6,8 @@ const Table = ({
     price,
     amount,
     list,
+    total,
+    setTotal,
     }) => {
     
       
@@ -53,6 +55,8 @@ const Table = ({
                     ))
                 }
              </table> 
+             <hr />
+             <div className="flex justify-end items-end my-5"><h2 className="text-2xl font-bold"> Kshs. {total}</h2></div>
     </>
   );
 };
